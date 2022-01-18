@@ -57,7 +57,7 @@ let game = () => {
     }
 }*/
 
-const playerSelection = window.prompt().toLowerCase();
+//const playerSelection = window.prompt().toLowerCase();
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
