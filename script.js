@@ -1,3 +1,6 @@
+let playerScore = 0;
+let compScore = 0;
+
 // comp choice function
 function computerPlay(choice) {
    choice = Math.floor(Math.random() * 3);
@@ -22,44 +25,54 @@ function playRound(playerSelection, computerSelection) {
     }
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper'){
+            compScore++;
             return 'Sorry you lose :( paper beats rock'
         } else {
-            return 'You won!'
+            playerScore++;
+            return 'You won the round!'
         }
     }
     if (playerSelection === 'scissors') {
         if (computerSelection === 'rock'){
+            compScore++;
             return 'Sorry you lose :( rock beats scissors'
         } else {
-            return 'You won!'
+            playerScore++;
+            return 'You won the round!'
         }
     }
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors'){
+            compScore++;
             return 'Sorry you lose :( scissors beats paper'
         } else {
-            return 'You won!'
+            playerScore++;
+            return 'You won the round!'
         }
     }
 };
 
-/*let playerScore = 0;
-let compScore = 0;
-
-let game = () => {
-    playRound = i;
-    for (i = 0; i <= 5; i++){
-        if (){
-            return playerScore++;
-        } else {
-            return compScore++;
-        }
+const totalScore = (total) => {
+    if (playerScore === 5) {
+        return 'You won the game';
+    } else if (compScore === 5){
+        return 'Sorry you lost the game. Please reload the the page if wanna play again.'
+    } else {
+        return 'Next round'
     }
+} 
+const playerSelection = window.prompt().toLowerCase();
+const computerSelection = computerPlay();
+
+/*const game = () => {
+    playRound(playerSelection, computerSelection);
+   
 }*/
 
-//const playerSelection = window.prompt().toLowerCase();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
 
 
+console.log( playRound(playerSelection, computerSelection));
+console.log('your score:' + playerScore);
+console.log('compscore:'+ compScore);
+console.log(totalScore())
   
